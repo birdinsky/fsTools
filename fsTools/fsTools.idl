@@ -1,0 +1,46 @@
+// fsTools.idl : IDL source for fsTools
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (fsTools.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+[
+	object,
+	uuid(4EB388AF-2DF3-4208-A151-1D41FF036023),
+	dual,
+	nonextensible,
+	pointer_default(unique)
+]
+interface IfsXMLParser : IDispatch{
+	[id(1)] HRESULT LoadFile(BSTR* FileName);
+	[id(2)] HRESULT GetSpecifiedAttribute([in] BSTR* NodePath, [in] BSTR* AttributeName, [in]ULONG bufferSize, [out, retval] CHAR* pAttribute);
+	[id(3)] HRESULT GetNodesInfo([in] CHAR* NodePath, [in]ULONG bufferSize, [in, out] CHAR* AttributeName, [in, out] CHAR* AttributeValue, [out, retval] VARIANT_BOOL* IsNextNode);
+};
+[
+	uuid(04AEA90B-0622-4997-B4C8-59D7F78F9D7E),
+	version(1.0),
+]
+library fsToolsLib
+{
+	importlib("stdole2.tlb");
+	[
+		uuid(7EC5C565-CE7D-46A7-96A4-AEF617DB26CB)		
+	]
+	dispinterface _IfsXMLParserEvents
+	{
+		properties:
+		methods:
+	};
+	[
+		uuid(ED5F13F4-DE0B-4475-A014-05A0E5EAD490)		
+	]
+	coclass fsXMLParser
+	{
+		[default] interface IfsXMLParser;
+		[default, source] dispinterface _IfsXMLParserEvents;
+	};
+};
+

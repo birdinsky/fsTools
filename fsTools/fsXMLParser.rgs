@@ -1,0 +1,26 @@
+HKCR
+{
+	fsXMLParser.1 = s 'fsXMLParser Class'
+	{
+		CLSID = s '{ED5F13F4-DE0B-4475-A014-05A0E5EAD490}'
+	}
+	fsXMLParser = s 'fsXMLParser Class'
+	{		
+		CurVer = s 'fsXMLParser.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {ED5F13F4-DE0B-4475-A014-05A0E5EAD490} = s 'fsXMLParser Class'
+		{
+			ProgID = s 'fsXMLParser.1'
+			VersionIndependentProgID = s 'fsXMLParser'
+			ForceRemove Programmable
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			TypeLib = s '{04AEA90B-0622-4997-B4C8-59D7F78F9D7E}'
+			Version = s '1.0'
+		}
+	}
+}

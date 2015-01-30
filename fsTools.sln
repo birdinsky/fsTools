@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "fsTools", "fsTools\fsTools.vcxproj", "{86B2ADBC-FC9E-48F5-9E07-E583EBF2F48B}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "fsToolsPS", "fsTools\fsToolsPS.vcxproj", "{9563F437-8930-4776-A2DB-F9475C03DEF1}"
+	ProjectSection(ProjectDependencies) = postProject
+		{86B2ADBC-FC9E-48F5-9E07-E583EBF2F48B} = {86B2ADBC-FC9E-48F5-9E07-E583EBF2F48B}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "tester", "tester\tester.vcxproj", "{A7EDF7CB-C459-404B-8E8C-C9469D9C7B8F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{86B2ADBC-FC9E-48F5-9E07-E583EBF2F48B}.Debug|Win32.ActiveCfg = Debug|Win32
+		{86B2ADBC-FC9E-48F5-9E07-E583EBF2F48B}.Debug|Win32.Build.0 = Debug|Win32
+		{86B2ADBC-FC9E-48F5-9E07-E583EBF2F48B}.Release|Win32.ActiveCfg = Release|Win32
+		{86B2ADBC-FC9E-48F5-9E07-E583EBF2F48B}.Release|Win32.Build.0 = Release|Win32
+		{9563F437-8930-4776-A2DB-F9475C03DEF1}.Debug|Win32.ActiveCfg = Debug|Win32
+		{9563F437-8930-4776-A2DB-F9475C03DEF1}.Release|Win32.ActiveCfg = Release|Win32
+		{A7EDF7CB-C459-404B-8E8C-C9469D9C7B8F}.Debug|Win32.ActiveCfg = Debug|Win32
+		{A7EDF7CB-C459-404B-8E8C-C9469D9C7B8F}.Debug|Win32.Build.0 = Debug|Win32
+		{A7EDF7CB-C459-404B-8E8C-C9469D9C7B8F}.Release|Win32.ActiveCfg = Release|Win32
+		{A7EDF7CB-C459-404B-8E8C-C9469D9C7B8F}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
