@@ -33,3 +33,5 @@ define private member variable with default SETER and GETER
 	{\
 	return V; \
 	}
+
+#define MAX_VALUE_BUFFER_SIZE 64

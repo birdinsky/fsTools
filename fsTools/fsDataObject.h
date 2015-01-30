@@ -75,16 +75,21 @@ protected:
 	*/
 	void* __pM[MAX_LIST_COUNT];
 	unsigned int __Index;
+
+	void* __pMethod;
 private:
 	virtual void __InitializeList() = 0;
 public:
 	bool ObjSerializeInitialize(fsSerializeMethod method);
 
-	void operator << (dtXMLNode* pData)
+	void operator << (const char* pNodePath)
 	{
 		for (int i = 0; i < __Index; i++)
 		{
-
+			char arrName[MAX_VALUE_BUFFER_SIZE] = { 0 };
+			char arrValue[MAX_VALUE_BUFFER_SIZE] = { 0 };
+			VARIANT_BOOL bRet = false;
+			((IfsXMLParser*)__pMethod)->GetNodesInfo(const_cast<char*>(pNodePath), MAX_VALUE_BUFFER_SIZE, arrName, arrValue, &bRet);
 		}
 	};
 	 void operator >> (FILE* pFile) ;

@@ -38,6 +38,7 @@ bool fsDataObject::ObjSerializeInitialize(fsSerializeMethod method)
 	{
 		ATL::CComPtr<IfsXMLParser> parser;
 		parser.CoCreateInstance(CLSID_fsXMLParser);
+		__pMethod = parser.p;
 		break;
 	}
 	case fsData::fsINI:
