@@ -4,7 +4,7 @@
 
 
  /* File created by MIDL compiler version 8.00.0603 */
-/* at Fri Jan 30 18:40:23 2015
+/* at Mon Feb 02 13:52:21 2015
  */
 /* Compiler settings for fsTools.idl:
     Oicf, W1, Zp8, env=Win32 (32b run), target_arch=X86 8.00.0603 
@@ -116,21 +116,22 @@ static const fsTools_MIDL_PROC_FORMAT_STRING fsTools__MIDL_ProcFormatString =
 /*  2 */	NdrFcLong( 0x0 ),	/* 0 */
 /*  6 */	NdrFcShort( 0x7 ),	/* 7 */
 /*  8 */	NdrFcShort( 0xc ),	/* x86 Stack size/offset = 12 */
-/* 10 */	NdrFcShort( 0x0 ),	/* 0 */
+/* 10 */	NdrFcShort( 0x19 ),	/* 25 */
 /* 12 */	NdrFcShort( 0x8 ),	/* 8 */
-/* 14 */	0x46,		/* Oi2 Flags:  clt must size, has return, has ext, */
+/* 14 */	0x44,		/* Oi2 Flags:  has return, has ext, */
 			0x2,		/* 2 */
 /* 16 */	0x8,		/* 8 */
-			0x5,		/* Ext Flags:  new corr desc, srv corr check, */
+			0x1,		/* Ext Flags:  new corr desc, */
 /* 18 */	NdrFcShort( 0x0 ),	/* 0 */
-/* 20 */	NdrFcShort( 0x1 ),	/* 1 */
+/* 20 */	NdrFcShort( 0x0 ),	/* 0 */
 /* 22 */	NdrFcShort( 0x0 ),	/* 0 */
 
 	/* Parameter FileName */
 
-/* 24 */	NdrFcShort( 0x10b ),	/* Flags:  must size, must free, in, simple ref, */
+/* 24 */	NdrFcShort( 0x148 ),	/* Flags:  in, base type, simple ref, */
 /* 26 */	NdrFcShort( 0x4 ),	/* x86 Stack size/offset = 4 */
-/* 28 */	NdrFcShort( 0x20 ),	/* Type Offset=32 */
+/* 28 */	0x2,		/* FC_CHAR */
+			0x0,		/* 0 */
 
 	/* Return value */
 
@@ -160,13 +161,13 @@ static const fsTools_MIDL_PROC_FORMAT_STRING fsTools__MIDL_ProcFormatString =
 
 /* 60 */	NdrFcShort( 0x10b ),	/* Flags:  must size, must free, in, simple ref, */
 /* 62 */	NdrFcShort( 0x4 ),	/* x86 Stack size/offset = 4 */
-/* 64 */	NdrFcShort( 0x20 ),	/* Type Offset=32 */
+/* 64 */	NdrFcShort( 0x24 ),	/* Type Offset=36 */
 
 	/* Parameter AttributeName */
 
 /* 66 */	NdrFcShort( 0x10b ),	/* Flags:  must size, must free, in, simple ref, */
 /* 68 */	NdrFcShort( 0x8 ),	/* x86 Stack size/offset = 8 */
-/* 70 */	NdrFcShort( 0x20 ),	/* Type Offset=32 */
+/* 70 */	NdrFcShort( 0x24 ),	/* Type Offset=36 */
 
 	/* Parameter bufferSize */
 
@@ -258,42 +259,42 @@ static const fsTools_MIDL_TYPE_FORMAT_STRING fsTools__MIDL_TypeFormatString =
         {
 			NdrFcShort( 0x0 ),	/* 0 */
 /*  2 */	
-			0x11, 0x0,	/* FC_RP */
-/*  4 */	NdrFcShort( 0x1c ),	/* Offset= 28 (32) */
+			0x11, 0x8,	/* FC_RP [simple_pointer] */
+/*  4 */	0x2,		/* FC_CHAR */
+			0x5c,		/* FC_PAD */
 /*  6 */	
-			0x12, 0x0,	/* FC_UP */
-/*  8 */	NdrFcShort( 0xe ),	/* Offset= 14 (22) */
+			0x11, 0x0,	/* FC_RP */
+/*  8 */	NdrFcShort( 0x1c ),	/* Offset= 28 (36) */
 /* 10 */	
+			0x12, 0x0,	/* FC_UP */
+/* 12 */	NdrFcShort( 0xe ),	/* Offset= 14 (26) */
+/* 14 */	
 			0x1b,		/* FC_CARRAY */
 			0x1,		/* 1 */
-/* 12 */	NdrFcShort( 0x2 ),	/* 2 */
-/* 14 */	0x9,		/* Corr desc: FC_ULONG */
+/* 16 */	NdrFcShort( 0x2 ),	/* 2 */
+/* 18 */	0x9,		/* Corr desc: FC_ULONG */
 			0x0,		/*  */
-/* 16 */	NdrFcShort( 0xfffc ),	/* -4 */
-/* 18 */	NdrFcShort( 0x1 ),	/* Corr flags:  early, */
-/* 20 */	0x6,		/* FC_SHORT */
+/* 20 */	NdrFcShort( 0xfffc ),	/* -4 */
+/* 22 */	NdrFcShort( 0x1 ),	/* Corr flags:  early, */
+/* 24 */	0x6,		/* FC_SHORT */
 			0x5b,		/* FC_END */
-/* 22 */	
+/* 26 */	
 			0x17,		/* FC_CSTRUCT */
 			0x3,		/* 3 */
-/* 24 */	NdrFcShort( 0x8 ),	/* 8 */
-/* 26 */	NdrFcShort( 0xfff0 ),	/* Offset= -16 (10) */
-/* 28 */	0x8,		/* FC_LONG */
+/* 28 */	NdrFcShort( 0x8 ),	/* 8 */
+/* 30 */	NdrFcShort( 0xfff0 ),	/* Offset= -16 (14) */
+/* 32 */	0x8,		/* FC_LONG */
 			0x8,		/* FC_LONG */
-/* 30 */	0x5c,		/* FC_PAD */
+/* 34 */	0x5c,		/* FC_PAD */
 			0x5b,		/* FC_END */
-/* 32 */	0xb4,		/* FC_USER_MARSHAL */
+/* 36 */	0xb4,		/* FC_USER_MARSHAL */
 			0x83,		/* 131 */
-/* 34 */	NdrFcShort( 0x0 ),	/* 0 */
-/* 36 */	NdrFcShort( 0x4 ),	/* 4 */
 /* 38 */	NdrFcShort( 0x0 ),	/* 0 */
-/* 40 */	NdrFcShort( 0xffde ),	/* Offset= -34 (6) */
-/* 42 */	
-			0x11, 0xc,	/* FC_RP [alloced_on_stack] [simple_pointer] */
-/* 44 */	0x2,		/* FC_CHAR */
-			0x5c,		/* FC_PAD */
+/* 40 */	NdrFcShort( 0x4 ),	/* 4 */
+/* 42 */	NdrFcShort( 0x0 ),	/* 0 */
+/* 44 */	NdrFcShort( 0xffde ),	/* Offset= -34 (10) */
 /* 46 */	
-			0x11, 0x8,	/* FC_RP [simple_pointer] */
+			0x11, 0xc,	/* FC_RP [alloced_on_stack] [simple_pointer] */
 /* 48 */	0x2,		/* FC_CHAR */
 			0x5c,		/* FC_PAD */
 /* 50 */	

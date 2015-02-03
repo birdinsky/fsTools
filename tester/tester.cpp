@@ -3,45 +3,52 @@
 
 #include "stdafx.h"
 
-#include "..\fsTools\fsTools_i.h"
-#include "..\fsTools\fsTools_i.c"
+//#include "..\fsTools\fsTools_i.h"
+//#include "..\fsTools\fsTools_i.c"
+
+#include "..\\fsBaseObj\fsDataObject.h"
 #include <vector>
+
+#pragma comment(lib, "..\\Debug\\fsBaseObj.lib")
 #define FALSERETURN(hr) \
 if (FAILED(hr)) \
 	return -1;
 
+using namespace fsData;
+
+class TestObj : public fsDataObject
+{
+	DECLARE_REGISTERDATA(TestObj)
+
+	int id;
+	float r;
+	float h;
+	float v;
+	float x;
+	float y;
+	float z;
+};
+
+BEGIN_REGISTERDATA(TestObj)
+REGISTERDATA(fsDataType::fsINT, id)
+REGISTERDATA(fsDataType::fsFLOAT, r)
+REGISTERDATA(fsDataType::fsFLOAT, h)
+REGISTERDATA(fsDataType::fsFLOAT, v)
+REGISTERDATA(fsDataType::fsFLOAT, x)
+REGISTERDATA(fsDataType::fsFLOAT, y)
+REGISTERDATA(fsDataType::fsFLOAT, z)
+END_REGISTERDATA
+
 int _tmain(int argc, _TCHAR* argv[])
 {
-	::CoInitialize(NULL);
-
-	CComPtr<IfsXMLParser> pfsXMLP;
-
-	HRESULT hr = pfsXMLP.CoCreateInstance(CLSID_fsXMLParser);
-
-	FALSERETURN(hr);
-
-	hr = pfsXMLP->LoadFile((BSTR*)(_T("E:\\training.xml")));
-	FALSERETURN(hr);
-
-	char arrBuffer[64] = { 0 };
-	//hr = pfsXMLP->GetSpecifiedAttribute((BSTR*)(_T("StaticScene/Scene/SceneNode")), (BSTR*)_T("Path"), 64, arrBuffer);
-	//FALSERETURN(hr);
-
-	char arrAttribute[64] = { 0 };
-	char arrValue[64] = { 0 };
-	VARIANT_BOOL bRet = false;
-	hr = pfsXMLP->GetNodesInfo("Tips/Tip", 64, arrBuffer, arrValue, &bRet);
-	while (true)
-	{		
-		hr = pfsXMLP->GetNodesInfo(NULL, 64, arrBuffer, arrValue, &bRet);
-		if (FAILED(hr))
-			break;
+	std::vector<TestObj> objs;
+	TestObj::ObjSerializeInitialize(fsSerializeMethod::fsXML, "E:\\AbdomenTraining.xml");
+	for (int i = 0; i < 2; i++)
+	{
+		TestObj obj;
+		obj << "Camera/Target/Steps/Step";
+		objs.push_back(obj);
 	}
-	pfsXMLP.Release();
-
-	::CoUninitialize();
-
-
 
 	return 0;
 }

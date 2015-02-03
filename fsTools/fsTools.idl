@@ -15,7 +15,7 @@ import "ocidl.idl";
 	pointer_default(unique)
 ]
 interface IfsXMLParser : IDispatch{
-	[id(1)] HRESULT LoadFile(BSTR* FileName);
+	[id(1)] HRESULT LoadFile([in] CHAR* FileName);
 	[id(2)] HRESULT GetSpecifiedAttribute([in] BSTR* NodePath, [in] BSTR* AttributeName, [in]ULONG bufferSize, [out, retval] CHAR* pAttribute);
 	[id(3)] HRESULT GetNodesInfo([in] CHAR* NodePath, [in]ULONG bufferSize, [in, out] CHAR* AttributeName, [in, out] CHAR* AttributeValue, [out, retval] VARIANT_BOOL* IsNextNode);
 };

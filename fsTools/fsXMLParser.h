@@ -7,8 +7,8 @@
 
 #include "fsTools_i.h"
 #include "_IfsXMLParserEvents_CP.h"
-#include "tinyxml\tinystr.h"
-#include "tinyxml\tinyxml.h"
+#include "..\\tinyxml\tinystr.h"
+#include "..\\tinyxml\tinyxml.h"
 
 #define MAXNODENAME 64
 
@@ -30,7 +30,7 @@ class ATL_NO_VTABLE CfsXMLParser :
 	public IDispatchImpl<IfsXMLParser, &IID_IfsXMLParser, &LIBID_fsToolsLib, /*wMajor =*/ 1, /*wMinor =*/ 0>
 {
 public:
-	CfsXMLParser() : _mXMLRoot(NULL), _mcurNode(NULL), _mcurAttribute(NULL)
+	CfsXMLParser() : _mXMLRoot(NULL), _mcurNode(NULL), _mcurAttribute(NULL), _preNodePath()
 	{
 	}
 
@@ -66,7 +66,7 @@ public:
 
 
 
-	STDMETHOD(LoadFile)(BSTR* FileName);
+	STDMETHOD(LoadFile)(CHAR* FileName);
 
 private:
 
@@ -78,6 +78,8 @@ private:
 	TiXmlElement* _findSpecifiedNode(const char* nodeName, TiXmlElement* parentNode, bool bUnique = TRUE);
 	bool _getCurNodeName(const char* nodeName, char* curName, const unsigned int nSize = MAXNODENAME);
 	TiXmlAttribute* _getSpecifiedNode(TiXmlElement* curNode, const char* attributeName);
+
+	char _preNodePath[MAX_PATH];
 public:
 	STDMETHOD(GetSpecifiedAttribute)(BSTR* NodePath, BSTR* AttributeName, ULONG bufferSize, CHAR* pAttribute);
 	STDMETHOD(GetNodesInfo)(CHAR* NodePath, ULONG bufferSize, CHAR* AttributeName, CHAR* AttributeValue, VARIANT_BOOL* IsNextNode);

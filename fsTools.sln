@@ -12,6 +12,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "fsToolsPS", "fsTools\fsTool
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "tester", "tester\tester.vcxproj", "{A7EDF7CB-C459-404B-8E8C-C9469D9C7B8F}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "fsBaseObj", "fsBaseObj\fsBaseObj.vcxproj", "{42DCD3AA-D86B-4741-BE74-F3D68F33EB56}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -28,6 +30,10 @@ Global
 		{A7EDF7CB-C459-404B-8E8C-C9469D9C7B8F}.Debug|Win32.Build.0 = Debug|Win32
 		{A7EDF7CB-C459-404B-8E8C-C9469D9C7B8F}.Release|Win32.ActiveCfg = Release|Win32
 		{A7EDF7CB-C459-404B-8E8C-C9469D9C7B8F}.Release|Win32.Build.0 = Release|Win32
+		{42DCD3AA-D86B-4741-BE74-F3D68F33EB56}.Debug|Win32.ActiveCfg = Debug|Win32
+		{42DCD3AA-D86B-4741-BE74-F3D68F33EB56}.Debug|Win32.Build.0 = Debug|Win32
+		{42DCD3AA-D86B-4741-BE74-F3D68F33EB56}.Release|Win32.ActiveCfg = Release|Win32
+		{42DCD3AA-D86B-4741-BE74-F3D68F33EB56}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -24,12 +24,11 @@ STDMETHODIMP CfsXMLParser::InterfaceSupportsErrorInfo(REFIID riid)
 
 
 
-STDMETHODIMP CfsXMLParser::LoadFile(BSTR* FileName)
+STDMETHODIMP CfsXMLParser::LoadFile(CHAR* FileName)
 {
 	// TODO: Add your implementation code here
 	//::MessageBox(NULL, (TCHAR*)FileName, _T("HELLO"), MB_OK);
-	USES_CONVERSION;
-	if (!_mXMLDoc.LoadFile(W2A((TCHAR*)FileName)))
+	if (!_mXMLDoc.LoadFile(FileName))
 		MSGBOXREERR("can't load xml file")
 
 		_mXMLRoot = _mXMLDoc.RootElement();
@@ -133,8 +132,14 @@ TiXmlAttribute* CfsXMLParser::_getSpecifiedNode(TiXmlElement* curNode, const cha
 STDMETHODIMP CfsXMLParser::GetNodesInfo(CHAR* NodePath, ULONG bufferSize, CHAR* AttributeName, CHAR* AttributeValue, VARIANT_BOOL* IsNextNode)
 {
 	// TODO: Add your implementation code here
-	if (NodePath != NULL)
+	std::string _strNodePath(NodePath);
+	if (_strNodePath.compare(_preNodePath))
+	{
+		::ZeroMemory(_preNodePath, MAX_PATH);
+		::memcpy(_preNodePath, _strNodePath.c_str(), _strNodePath.size());
 		_mcurNode = _findSpecifiedNode(NodePath, _mXMLRoot, false);
+
+	}
 	if (_mcurNode == NULL)
 		MSGBOXREERR("CurNode is NULL")
 	if (_mcurAttribute == NULL)

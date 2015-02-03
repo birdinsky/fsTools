@@ -4,7 +4,7 @@
 
 
  /* File created by MIDL compiler version 8.00.0603 */
-/* at Fri Jan 30 18:40:23 2015
+/* at Mon Feb 02 13:52:21 2015
  */
 /* Compiler settings for fsTools.idl:
     Oicf, W1, Zp8, env=Win32 (32b run), target_arch=X86 8.00.0603 
@@ -96,7 +96,7 @@ EXTERN_C const IID IID_IfsXMLParser;
     {
     public:
         virtual /* [id] */ HRESULT STDMETHODCALLTYPE LoadFile( 
-            BSTR *FileName) = 0;
+            /* [in] */ CHAR *FileName) = 0;
         
         virtual /* [id] */ HRESULT STDMETHODCALLTYPE GetSpecifiedAttribute( 
             /* [in] */ BSTR *NodePath,
@@ -171,7 +171,7 @@ EXTERN_C const IID IID_IfsXMLParser;
         
         /* [id] */ HRESULT ( STDMETHODCALLTYPE *LoadFile )( 
             IfsXMLParser * This,
-            BSTR *FileName);
+            /* [in] */ CHAR *FileName);
         
         /* [id] */ HRESULT ( STDMETHODCALLTYPE *GetSpecifiedAttribute )( 
             IfsXMLParser * This,
